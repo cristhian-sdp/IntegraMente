@@ -1,4 +1,4 @@
-# El Patita
+# IntegraMente
 
 Bienvenido al repositorio de **IntegraMente**, una aplicación web educativa diseñada para ayudar a niños de primaria a descubrir sus talentos, habilidades e intereses a través de juegos interactivos.
 
