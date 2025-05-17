@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos y configuración de la página -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <meta name="rating" content="safe for kids" />
+    <!-- Título de la página -->
+    <title>IntegraMente | Descubre tu Talento</title>
+    <!-- Enlaces a hojas de estilo CSS -->
+    <link rel="stylesheet" href="css/styles.min.css" />
+    <!-- Metadatos para SEO -->
+    <meta name="title" content="IntegraMente | Descubre tu Talento" />
+    <meta
+      name="description"
+      content="¡Aprender nunca fue tan divertido! Con IntegraMente, descubre tus talentos y habilidades mientras juegas y exploras nuevas formas de aprender. Ideal para niños curiosos que quieren descubrir lo mejor de sí mismos."
+    />
+    <meta
+      name="keywords"
+      content="Plataforma interactiva, Habilidades, Talentos, Intereses, Niños de primaria, Orientación vocacional, Orientación académica, Herramientas lúdicas, Educación personalizada, Descubre tu talento, IntegraMente, Desarrollo infantil, Educación interactiva, Juegos educativos, Talento infantil"
+    />
+    <!-- Autores del contenido de la página -->
+    <meta
+      name="author"
+      content="Cristhian Steffano Díaz Piminchumo, Nehemías Isaías Lavado Vargas, Luis Bryan Díaz Vega, Jose Luis Garcia Roldan"
+    />
+    <meta name="copyright" content="© 2025 IntegraMente" />
+    <!-- Enlace canónico -->
+    <link rel="canonical" href="https://integramente.pages.dev/" />
+    <!-- Metadatos para Open Graph (para compartir en redes sociales) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://integramente.pages.dev/" />
+    <meta property="og:title" content="IntegraMente | Descubre tu Talento" />
+    <meta
+      property="og:description"
+      content="¡Aprender nunca fue tan divertido! Con IntegraMente, descubre tus talentos y habilidades mientras juegas y exploras nuevas formas de aprender. Ideal para niños curiosos que quieren descubrir lo mejor de sí mismos."
+    />
+    <meta property="og:image" content="img/misc/background-main.webp" />
+    <!-- Permite indexar la página y seguir los enlaces -->
+    <meta name="robots" content="index, follow" />
+    <!-- Sitemap -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
+    <!-- Favicon de la página -->
+    <link
+      rel="icon"
+      href="img/favicon/IntegraMente.ico"
+      type="image/webp"
+      sizes="any"
+    />
+    <!-- Fuente Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap&subset=latin"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img
+          src="img/favicon/IntegraMente.ico"
+          class="logo-icon"
+          alt="Logo IntegraMente"
+        />
+        <span class="logo-text">IntegraMente</span>
+      </div>
+    </header>
+    <main>
+      <!-- Sección Nombre -->
+      <section id="section-nombre">
+        <div class="content-left">
+          <div>
+            <h1>Hola<span class="span-red">!</span></h1>
+            <h1>Cual es tu nombre<span class="span-skyblue">?</span></h1>
+            <p>
+              Descubre tus <span class="span-red">talentos</span> y
+              <span class="span-skyblue">habilidades</span> jugando con
+              IntegraMente, la plataforma que hace del aprendizaje algo
+              <span class="span-yellow">divertido</span> y
+              <span class="span-pink">emocionante</span>.
+            </p>
+          </div>
+        </div>
+        <div class="content-right">
+          <input
+            type="text"
+            id="input-nombre"
+            placeholder="Escribe tu nombre"
+            maxlength="20"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            id="btn-next-nombre"
+            rel="noopener noreferrer nofollow"
+            disabled
+          >
+            <img
+              src="img/icons/next.webp"
+              alt="Siguiente"
+              width="30"
+              height="30"
+            />
+          </button>
+        </div>
+      </section>
+      <!-- Sección Edad (oculto al inicio) -->
+      <section id="section-edad" style="display: none">
+        <div class="content-left">
+          <h1>Cuantos años tienes<span class="span-skyblue">?</span></h1>
+          <p>
+            Descubre tus <span class="span-red">talentos</span> y
+            <span class="span-skyblue">habilidades</span> jugando con
+            IntegraMente, la plataforma que hace del aprendizaje algo
+            <span class="span-yellow">divertido</span> y
+            <span class="span-pink">emocionante</span>.
+          </p>
+        </div>
+        <div class="content-right">
+          <input
+            type="number"
+            id="input-edad"
+            placeholder="Edad (6-12)"
+            min="6"
+            max="12"
+            maxlength="2"
+          />
+          <div class="button-group">
+            <button
+              type="button"
+              id="btn-back-edad"
+              rel="noopener noreferrer nofollow"
+            >
+              <img
+                src="img/icons/back.webp"
+                alt="Atrás"
+                width="30"
+                height="30"
+              />
+            </button>
+            <button
+              type="button"
+              id="btn-next-edad"
+              rel="noopener noreferrer nofollow"
+              disabled
+            >
+              <img
+                src="img/icons/next.webp"
+                alt="Siguiente"
+                width="30"
+                height="30"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Sección Inicio (oculto al inicio) -->
+      <section id="section-inicio" style="display: none">
+        <div class="inicio-header">
+          <span id="saludo-usuario" class="saludo-usuario-text">Hola, </span>
+          <nav aria-label="Navegación de la pantalla de inicio">
+            <a href="#" class="nav-item">
+              <span class="nav-icon">&#127968;</span>
+              <span class="nav-text span-red">Inicio</span>
+            </a>
+            <a href="#" class="nav-item">
+              <span class="nav-icon">&#129504;</span>
+              <span class="nav-text span-pink">Pensar</span>
+            </a>
+            <a href="#" class="nav-item">
+              <span class="nav-icon">&#129309;</span>
+              <span class="nav-text span-yellow">Social</span>
+            </a>
+            <a href="#" class="nav-item">
+              <span class="nav-icon">&#127912;</span>
+              <span class="nav-text span-skyblue">Crear</span>
+            </a>
+            <a href="#" class="nav-item">
+              <span class="nav-icon">&#127942;</span>
+              <span class="nav-text span-orange">Logros</span>
+            </a>
+          </nav>
+          <button
+            type="button"
+            id="btn-salir"
+            class="btn-salir-inicio"
+            title="Salir"
+            rel="noopener noreferrer nofollow"
+          >
+            <img
+              src="img/icons/logout.webp"
+              alt="Salir"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        </div>
+        <div class="inicio-main-content" id="inicio-main-content">
+          <!-- Sección de bienvenida (Inicio) -->
+          <div id="seccion-inicio-main">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              id="video-background"
+              src="video/welcome-background.webm"
+            ></video>
+            <div class="video-overlay-text">
+              <span class="logo-text">IntegraMente</span>
+            </div>
+          </div>
+          <!-- Sección Pensar -->
+          <div id="seccion-pensar" style="display: none">
+            <div class="seccion-juego-card">
+              <div class="seccion-juego-emoji">&#129504;</div>
+              <div class="seccion-juego-titulo span-pink">Pensar</div>
+              <button
+                type="button"
+                class="seccion-juego-boton"
+                id="iniciar-pensar"
+                rel="noopener noreferrer nofollow"
+              >
+                JUGAR
+              </button>
+            </div>
+          </div>
+          <!-- Juego Pensar (inicialmente oculto) -->
+          <div id="juego-pensar" class="juego-container" style="display: none">
+            <div class="juego-header">
+              <h2>Encuentra la imagen diferente</h2>
+              <div class="juego-controles">
+                <div class="contador-tiempo">
+                  <span id="tiempo-pensar">20</span>
+                </div>
+                <div class="nivel-indicador">
+                  <span>Nivel</span>
+                  <span id="nivel-pensar">1</span>
+                </div>
+                <button
+                  type="button"
+                  id="reset-pensar"
+                  class="btn-juego btn-reset"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <img
+                    src="img/icons/retry.webp"
+                    alt="Reiniciar"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+                <button
+                  type="button"
+                  id="next-pensar"
+                  class="btn-juego btn-next"
+                  rel="noopener noreferrer nofollow"
+                  disabled
+                >
+                  <img
+                    src="img/icons/next.webp"
+                    alt="Siguiente"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="juego-grid" id="pensar-grid">
+              <!-- Las imágenes se generarán dinámicamente con Js-->
+            </div>
+          </div>
+          <!-- Sección Social -->
+          <div id="seccion-social" style="display: none">
+            <div class="seccion-juego-card">
+              <div class="seccion-juego-emoji">&#129309;</div>
+              <div class="seccion-juego-titulo span-yellow">Social</div>
+              <button
+                type="button"
+                class="seccion-juego-boton"
+                id="iniciar-social"
+                rel="noopener noreferrer nofollow"
+              >
+                JUGAR
+              </button>
+            </div>
+          </div>
+          <!-- Juego Social (inicialmente oculto) -->
+          <div id="juego-social" class="juego-container" style="display: none">
+            <div class="juego-header">
+              <h2 id="pregunta-social">
+                Uno de mis compañeros(as) está discutiendo ¿Qué puedo hacer?
+              </h2>
+              <div class="juego-controles">
+                <div class="nivel-indicador">
+                  <span>Nivel</span>
+                  <span id="nivel-social">1</span>
+                </div>
+                <button
+                  type="button"
+                  id="reset-social"
+                  class="btn-juego btn-reset"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <img
+                    src="img/icons/retry.webp"
+                    alt="Reiniciar"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+                <button
+                  type="button"
+                  id="next-social"
+                  class="btn-juego btn-next"
+                  rel="noopener noreferrer nofollow"
+                  disabled
+                >
+                  <img
+                    src="img/icons/next.webp"
+                    alt="Siguiente"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="juego-reference-image">
+              <img
+                id="reference-image"
+                src="img/misc/level1-img-reference.webp"
+                alt="Situación social"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="social-options-container" id="social-options">
+              <!-- Las opciones se generarán dinámicamente con JS -->
+            </div>
+          </div>
+          <!-- Sección Crear -->
+          <div id="seccion-crear" style="display: none">
+            <div class="seccion-juego-card">
+              <div class="seccion-juego-emoji">&#127912;</div>
+              <div class="seccion-juego-titulo span-skyblue">Crear</div>
+              <button
+                type="button"
+                class="seccion-juego-boton"
+                id="iniciar-crear"
+                rel="noopener noreferrer nofollow"
+              >
+                JUGAR
+              </button>
+            </div>
+          </div>
+          <!-- Juego Crear (inicialmente oculto) -->
+          <div id="juego-crear" class="juego-container" style="display: none">
+            <div class="juego-header">
+              <h2 id="crear-titulo">Selecciona un personaje</h2>
+              <div class="juego-controles">
+                <div class="nivel-indicador">
+                  <span>Nivel</span>
+                  <span id="nivel-crear">1</span>
+                </div>
+                <button
+                  type="button"
+                  id="reset-crear"
+                  class="btn-juego btn-reset"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <img
+                    src="img/icons/retry.webp"
+                    alt="Reiniciar"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+                <button
+                  type="button"
+                  id="next-crear"
+                  class="btn-juego btn-next"
+                  rel="noopener noreferrer nofollow"
+                  disabled
+                >
+                  <img
+                    src="img/icons/next.webp"
+                    alt="Siguiente"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+            </div>
+            <!-- Área de selección (personajes, escenarios, objetos) -->
+            <div
+              id="crear-seleccion-container"
+              class="crear-seleccion-container"
+            >
+              <!-- Las opciones se generarán dinámicamente -->
+            </div>
+            <!-- Área para el cuento generado (inicialmente oculto) -->
+            <div
+              id="crear-cuento-container"
+              class="crear-cuento-container"
+              style="display: none"
+            >
+              <h3>Se creó tu Historia</h3>
+              <div class="crear-elementos-seleccionados">
+                <!-- Elementos seleccionados se mostrarán aquí -->
+              </div>
+              <div class="crear-historia-generada">
+                <p id="crear-texto-historia"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Sección Logros -->
+          <div id="seccion-logros" style="display: none">
+            <div class="seccion-juego-card">
+              <div class="seccion-juego-emoji">&#127942;</div>
+              <div class="seccion-juego-titulo span-orange">Logros</div>
+              <button
+                type="button"
+                class="seccion-juego-boton"
+                id="iniciar-logros"
+                rel="noopener noreferrer nofollow"
+                disabled
+              >
+                VER
+              </button>
+            </div>
+          </div>
+          <!-- Contenedor de resultados (inicialmente oculto) -->
+          <div
+            id="logros-resultados"
+            class="logros-resultados"
+            style="display: none"
+          >
+            <div class="logros-tarjeta">
+              <div class="logros-encabezado">
+                <img
+                  src="img/favicon/IntegraMente.ico"
+                  alt="Logo IntegraMente"
+                  class="logros-logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h2 id="logros-nombre-usuario">NOMBRE DE USUARIO</h2>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">Cognitivo</h3>
+                <p id="logros-cognitivo-resultado">Puntaje más alto en "..."</p>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">Social</h3>
+                <p id="logros-social-resultado">
+                  Empatía con "..." puntos, pensamiento crítico social con "..."
+                  puntos, y habilidades de resolución de conflictos con "..."
+                  puntos.
+                </p>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">Crear</h3>
+                <p id="logros-crear-resultado">
+                  Originalidad con "..." puntos, imaginación con "..." puntos, y
+                  percepción estética con "..." puntos.
+                </p>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">Áreas a fortalecer</h3>
+                <p id="logros-areas-mejorar">
+                  Puedes mejorar en "percepción estética", "...", "...", etc.
+                </p>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">Actividades recomendadas</h3>
+                <p id="logros-actividades">
+                  Te sugerimos "Hacer más juegos de memoria", "Leer cuentos" o
+                  "...".
+                </p>
+              </div>
+              <div class="logros-seccion">
+                <h3 class="logros-seccion-titulo">
+                  Posibles profesiones futuras
+                </h3>
+                <p id="logros-profesiones">
+                  "Escritor", "diseñador de historias", "..." o "...".
+                </p>
+              </div>
+              <button
+                class="btn-volver"
+                id="btn-volver-logros"
+                rel="noopener noreferrer nofollow"
+              >
+                Volver al inicio
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="main-footer">
+      <section class="footer-banner">
+        <div class="footer-logo">
+          <img
+            src="img/favicon/IntegraMente.ico"
+            alt="Logo IntegraMente"
+            class="footer-logo-img"
+            width="120"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="footer-text-container">
+            <span class="logo-text">IntegraMente</span>
+            <p class="footer-tagline">
+              Herramienta interactiva para la identificación de habilidades en
+              niños de primaria
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="footer-links">
+        <div class="footer-legal">
+          <a
+            href="pdf/politicas-privacidad.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+            title="Abrir el documento de Políticas de Privacidad"
+            aria-label="Abrir el documento de Políticas de Privacidad"
+            >Políticas de Privacidad</a
+          >
+          <a
+            href="pdf/terminos-condiciones.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+            title="Abrir el documento de Términos y Condiciones"
+            aria-label="Abrir el documento de Términos y Condiciones"
+            >Términos y Condiciones</a
+          >
+        </div>
+        <div class="footer-bottom">
+          <!-- Derechos reservados -->
+          <div class="footer-copyright">
+            &copy; 2025 IntegraMente. Todos los derechos reservados.
+          </div>
+          <a
+            href="https://github.com/cristhian-sdp/IntegraMente"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            title="Abrir el repositorio de GitHub de IntegraMente"
+            aria-label="Abrir el repositorio de GitHub de IntegraMente"
+          >
+            <img
+              src="img/icons/github.webp"
+              alt="Icono de GitHub"
+              class="github-icon"
+              width="40"
+              height="40"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </div>
+      </section>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/social-game.js"></script>
+    <script src="js/create-game.js"></script>
+    <script src="js/logros.js"></script>
+  </body>
+</html>

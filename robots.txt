@@ -1,0 +1,9 @@
+# Permitir a todos los motores de búsqueda indexar el sitio
+User-agent: *
+Allow: /
+
+# Bloquear la página de error 404
+Disallow: /404
+
+# Enlace al sitemap
+Sitemap: https://integramente.pages.dev/sitemap.xml
