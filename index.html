@@ -106,12 +106,15 @@
           <button
             type="button"
             id="btn-next-nombre"
+            aria-label="Avanzar a la siguiente página"
+            title="Avanzar a la siguiente página"
             rel="noopener noreferrer nofollow"
             disabled
           >
             <img
               src="img/icons/next.webp"
-              alt="Siguiente"
+              alt="Icono de Siguiente"
+              aria-hidden="true"
               width="30"
               height="30"
             />
@@ -143,11 +146,14 @@
             <button
               type="button"
               id="btn-back-edad"
+              title="Regresar a la página anterior"
+              aria-label="Regresar a la página anterior"
               rel="noopener noreferrer nofollow"
             >
               <img
                 src="img/icons/back.webp"
-                alt="Atrás"
+                alt="Icono de Regresar"
+                aria-hidden="true"
                 width="30"
                 height="30"
               />
@@ -155,12 +161,15 @@
             <button
               type="button"
               id="btn-next-edad"
+              title="Avanzar a la siguiente página"
+              aria-label="Avanzar a la siguiente página"
               rel="noopener noreferrer nofollow"
               disabled
             >
               <img
                 src="img/icons/next.webp"
-                alt="Siguiente"
+                alt="Icono de Siguiente"
+                aria-hidden="true"
                 width="30"
                 height="30"
               />
@@ -172,40 +181,43 @@
       <section id="section-inicio" style="display: none">
         <div class="inicio-header">
           <span id="saludo-usuario" class="saludo-usuario-text">Hola, </span>
-          <nav aria-label="Navegación de la pantalla de inicio">
-            <a href="#" class="nav-item">
-              <span class="nav-icon">&#127968;</span>
+          <nav aria-label="Navegación principal">
+            <a href="#" class="nav-item" title="Ir a Inicio">
+              <span class="nav-icon" aria-hidden="true">&#127968;</span>
               <span class="nav-text span-red">Inicio</span>
             </a>
-            <a href="#" class="nav-item">
-              <span class="nav-icon">&#129504;</span>
+            <a href="#" class="nav-item" title="Ir a la sección de Pensar">
+              <span class="nav-icon" aria-hidden="true">&#129504;</span>
               <span class="nav-text span-pink">Pensar</span>
             </a>
-            <a href="#" class="nav-item">
-              <span class="nav-icon">&#129309;</span>
+            <a href="#" class="nav-item" title="Ir a la sección de Social">
+              <span class="nav-icon" aria-hidden="true">&#129309;</span>
               <span class="nav-text span-yellow">Social</span>
             </a>
-            <a href="#" class="nav-item">
-              <span class="nav-icon">&#127912;</span>
+            <a href="#" class="nav-item" title="Ir a la sección de Crear">
+              <span class="nav-icon" aria-hidden="true">&#127912;</span>
               <span class="nav-text span-skyblue">Crear</span>
             </a>
-            <a href="#" class="nav-item">
-              <span class="nav-icon">&#127942;</span>
+            <a href="#" class="nav-item" title="Ir a la sección de Logros">
+              <span class="nav-icon" aria-hidden="true">&#127942;</span>
               <span class="nav-text span-orange">Logros</span>
             </a>
           </nav>
           <button
             type="button"
             id="btn-salir"
+            aria-label="Cerrar sesión"
             class="btn-salir-inicio"
             title="Salir"
             rel="noopener noreferrer nofollow"
           >
             <img
               src="img/icons/logout.webp"
-              alt="Salir"
+              alt="Icono de Salir"
+              aria-hidden="true"
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
             />
           </button>
         </div>
@@ -213,13 +225,18 @@
           <!-- Sección de bienvenida (Inicio) -->
           <div id="seccion-inicio-main">
             <video
+              id="video-background"
               autoplay
               muted
               loop
               playsinline
-              id="video-background"
-              src="video/welcome-background.webm"
-            ></video>
+              preload="metadata"
+              aria-hidden="true"
+            >
+              <source src="video/welcome-background.webm" type="video/webm" />
+              Tu navegador no soporta la reproducción de videos. Por favor,
+              actualiza tu navegador o utiliza uno compatible.
+            </video>
             <div class="video-overlay-text">
               <span class="logo-text">IntegraMente</span>
             </div>
@@ -227,12 +244,15 @@
           <!-- Sección Pensar -->
           <div id="seccion-pensar" style="display: none">
             <div class="seccion-juego-card">
-              <div class="seccion-juego-emoji">&#129504;</div>
+              <div class="seccion-juego-emoji" aria-hidden="true">
+                &#129504;
+              </div>
               <div class="seccion-juego-titulo span-pink">Pensar</div>
               <button
                 type="button"
                 class="seccion-juego-boton"
                 id="iniciar-pensar"
+                aria-label="Iniciar el juego de Pensar"
                 rel="noopener noreferrer nofollow"
               >
                 JUGAR
@@ -254,37 +274,50 @@
                 <button
                   type="button"
                   id="reset-pensar"
+                  title="Reiniciar el juego"
+                  aria-label="Reiniciar el juego"
                   class="btn-juego btn-reset"
                   rel="noopener noreferrer nofollow"
                 >
                   <img
                     src="img/icons/retry.webp"
-                    alt="Reiniciar"
+                    alt="Icono de Reiniciar"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
                 <button
                   type="button"
                   id="next-pensar"
+                  title="Avanzar al siguiente nivel"
+                  aria-label="Avanzar al siguiente nivel"
                   class="btn-juego btn-next"
                   rel="noopener noreferrer nofollow"
                   disabled
                 >
                   <img
                     src="img/icons/next.webp"
-                    alt="Siguiente"
+                    alt="Icono de Siguiente"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
               </div>
             </div>
-            <div class="juego-grid" id="pensar-grid">
+            <div
+              class="juego-grid"
+              id="pensar-grid"
+              role="grid"
+              aria-label="Cuadrícula de imágenes para encontrar la diferente"
+            >
               <!-- Las imágenes se generarán dinámicamente con Js-->
             </div>
           </div>
@@ -297,6 +330,7 @@
                 type="button"
                 class="seccion-juego-boton"
                 id="iniciar-social"
+                aria-label="Iniciar el juego Social"
                 rel="noopener noreferrer nofollow"
               >
                 JUGAR
@@ -317,32 +351,40 @@
                 <button
                   type="button"
                   id="reset-social"
+                  title="Reiniciar el juego"
+                  aria-label="Reiniciar el juego"
                   class="btn-juego btn-reset"
                   rel="noopener noreferrer nofollow"
                 >
                   <img
                     src="img/icons/retry.webp"
-                    alt="Reiniciar"
+                    alt="Icono de Reiniciar"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
                 <button
                   type="button"
                   id="next-social"
+                  title="Avanzar al siguiente nivel"
+                  aria-label="Avanzar al siguiente nivel"
                   class="btn-juego btn-next"
                   rel="noopener noreferrer nofollow"
                   disabled
                 >
                   <img
                     src="img/icons/next.webp"
-                    alt="Siguiente"
+                    alt="Icono de Siguiente"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
               </div>
@@ -354,6 +396,7 @@
                 alt="Situación social"
                 loading="lazy"
                 decoding="async"
+                fetchpriority="low"
               />
             </div>
             <div class="social-options-container" id="social-options">
@@ -369,6 +412,7 @@
                 type="button"
                 class="seccion-juego-boton"
                 id="iniciar-crear"
+                aria-label="Iniciar el juego Crear"
                 rel="noopener noreferrer nofollow"
               >
                 JUGAR
@@ -387,32 +431,40 @@
                 <button
                   type="button"
                   id="reset-crear"
+                  title="Reiniciar el juego"
+                  aria-label="Reiniciar el juego"
                   class="btn-juego btn-reset"
                   rel="noopener noreferrer nofollow"
                 >
                   <img
                     src="img/icons/retry.webp"
-                    alt="Reiniciar"
+                    alt="Icono de Reiniciar"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
                 <button
                   type="button"
                   id="next-crear"
+                  title="Avanzar al siguiente nivel"
+                  aria-label="Avanzar al siguiente nivel"
                   class="btn-juego btn-next"
                   rel="noopener noreferrer nofollow"
                   disabled
                 >
                   <img
                     src="img/icons/next.webp"
-                    alt="Siguiente"
+                    alt="Icono de Siguiente"
+                    aria-hidden="true"
                     width="24"
                     height="24"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="low"
                   />
                 </button>
               </div>
@@ -448,6 +500,7 @@
                 type="button"
                 class="seccion-juego-boton"
                 id="iniciar-logros"
+                aria-label="Iniciar Logros"
                 rel="noopener noreferrer nofollow"
                 disabled
               >
@@ -469,6 +522,7 @@
                   class="logros-logo"
                   loading="lazy"
                   decoding="async"
+                  fetchpriority="low"
                 />
                 <h2 id="logros-nombre-usuario">NOMBRE DE USUARIO</h2>
               </div>
@@ -513,8 +567,11 @@
                 </p>
               </div>
               <button
+                type="button"
                 class="btn-volver"
                 id="btn-volver-logros"
+                title="Volver a la sección de inicio"
+                aria-label="Volver a la pantalla de inicio"
                 rel="noopener noreferrer nofollow"
               >
                 Volver al inicio
@@ -530,11 +587,13 @@
           <img
             src="img/favicon/IntegraMente.ico"
             alt="Logo IntegraMente"
+            title="Logo IntegraMente"
             class="footer-logo-img"
             width="120"
             height="120"
             loading="lazy"
             decoding="async"
+            fetchpriority="low"
           />
           <div class="footer-text-container">
             <span class="logo-text">IntegraMente</span>
@@ -569,7 +628,8 @@
         <div class="footer-bottom">
           <!-- Derechos reservados -->
           <div class="footer-copyright">
-            &copy; 2025 IntegraMente. Todos los derechos reservados.
+            &copy; <time datetime="2025">2025</time> IntegraMente. Todos los
+            derechos reservados.
           </div>
           <a
             href="https://github.com/cristhian-sdp/IntegraMente"
@@ -586,14 +646,15 @@
               height="40"
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
             />
           </a>
         </div>
       </section>
     </footer>
-    <script src="js/script.js"></script>
-    <script src="js/social-game.js"></script>
-    <script src="js/create-game.js"></script>
-    <script src="js/logros.js"></script>
+    <script src="js/script.min.js"></script>
+    <script src="js/social-game.min.js"></script>
+    <script src="js/create-game.min.js"></script>
+    <script src="js/logros.min.js"></script>
   </body>
 </html>
