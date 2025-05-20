@@ -125,23 +125,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   // Verificar si los 3 juegos están completados y actualizar botón
   function actualizarBotonLogros() {
-    console.log("Verificando juegos completados:", window.juegosCompletados);
-    // Obtener la referencia más reciente de juegosCompletados
     const juegosCompletados = window.juegosCompletados || [];
-    // Verificar si los 3 juegos están completados
     if (
       juegosCompletados.includes("pensar") &&
       juegosCompletados.includes("social") &&
       juegosCompletados.includes("crear")
     ) {
-      console.log("¡Todos los juegos completados! Activando botón Logros");
       btnIniciarLogros.disabled = false;
     } else {
-      console.log("Faltan juegos por completar");
       btnIniciarLogros.disabled = true;
     }
   }
-  // Ejecutar al cargar
   actualizarBotonLogros();
   // Verificar periódicamente si los juegos están completos
   setInterval(actualizarBotonLogros, 2000);
@@ -163,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.mostrarSoloSeccionInicio("inicio");
     });
   }
-  // Agregar esta función para manejar la navegación desde logros
   function ocultarResultadosLogros() {
     const logrosResultados = document.getElementById("logros-resultados");
     const seccionLogrosCard = document.querySelector(
@@ -174,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
       seccionLogrosCard.style.display = "flex";
     }
   }
-  // Hacer que esta función sea accesible globalmente
   window.ocultarResultadosLogros = ocultarResultadosLogros;
   // Mostrar los logros del usuario
   function mostrarLogros() {
@@ -184,17 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
     logrosNombreUsuario.textContent = nombreUsuario.toUpperCase();
     // ----- DATOS DEL JUEGO PENSAR -----
     const puntajeCognitivo = obtenerPuntajePensar();
-
     // Determinar la aptitud cognitiva según el puntaje
     const aptitudCognitiva = determinarAptitudCognitiva(puntajeCognitivo);
-    // Mostrar el puntaje cognitivo de forma diferente si es cero
     if (puntajeCognitivo <= 0) {
       logrosCognitivo.textContent =
         "Sin puntaje registrado en aptitudes cognitivas";
     } else {
       logrosCognitivo.textContent = `Tienes una aptitud de "${aptitudCognitiva}"`;
     }
-
     // ----- DATOS DEL JUEGO SOCIAL -----
     const puntajesSocial = obtenerPuntajesSocial();
     logrosSocial.textContent = `Empatía con ${puntajesSocial.empatia} puntos, pensamiento crítico social con ${puntajesSocial.pensamiento} puntos, y habilidades de resolución de conflictos con ${puntajesSocial.resolucion} puntos.`;
@@ -231,11 +220,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Obtener los puntajes del juego Pensar
   function obtenerPuntajePensar() {
-    // Obtener el puntaje real del juego Pensar desde la variable global
     return window.puntajesJuegos &&
       typeof window.puntajesJuegos.pensar === "number"
       ? window.puntajesJuegos.pensar
-      : 0; // Default a 0 si no hay puntaje
+      : 0;
   }
   function determinarAptitudCognitiva(puntaje) {
     // Definir aptitudes cognitivas específicas según el puntaje o nivel alcanzado
@@ -278,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const areasMejorar = [];
     const todasAptitudes = [];
     // Agregar las aptitudes cognitivas
-    // En este caso solo tenemos una aptitud cognitiva general
     todasAptitudes.push({
       nombre: "habilidad cognitiva",
       puntaje: puntajeCognitivo,
@@ -409,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
     });
-    // Asegurarnos de tener 3 actividades
+    // Si hay menos de 3 actividades, completar con otras aleatorias
     while (actividades.length < 3) {
       const todasActividades = [].concat(
         actividadesRecomendadas.cognitivo,
@@ -418,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const nuevaActividad =
         todasActividades[Math.floor(Math.random() * todasActividades.length)];
-      // Evitar duplicados
+      // Evitar duplicados en actividades
       if (!actividades.includes(nuevaActividad)) {
         actividades.push(nuevaActividad);
       }
@@ -437,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name: "cognitivo",
         score: (puntajeCognitivo / 5) * 100,
         label: "Cognitivo",
-      }, // normalizar a escala de 100
+      },
       { name: "empatia", score: puntajesSocial.empatia, label: "Empatía" },
       {
         name: "pensamientoCritico",
@@ -465,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
         label: "Percepción estética",
       },
     ];
-    // Ordenar por puntaje (mayor a menor)
+    // Filtrar y ordenar los puntajes
     allScores.sort((a, b) => b.score - a.score);
     // Tomar las 2 aptitudes más altas que tengan puntajes diferentes de cero
     const topAptitudes = allScores.filter((apt) => apt.score > 0).slice(0, 2);

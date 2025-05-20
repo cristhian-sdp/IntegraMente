@@ -129,14 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
         nivelActual++;
         iniciarNivel(nivelActual);
       } else {
-        // Juego completado
         mostrarResultadoFinal();
       }
     });
   }
   // Función para iniciar un nivel
   function iniciarNivel(nivel) {
-    // Actualizar UI
     nivelPensar.textContent = nivel;
     btnNextPensar.disabled = true;
     juegoTerminado = false;
@@ -192,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Temporizador
   function iniciarTemporizador() {
-    detenerTemporizador(); // Por si acaso hay uno activo
+    detenerTemporizador();
     intervalId = setInterval(() => {
       tiempoRestante--;
       tiempoPensar.textContent = tiempoRestante;
@@ -219,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Mostrar resultado final
   function mostrarResultadoFinal() {
-    // Primero limpiar el grid
+    // limpiar el grid
     pensarGrid.innerHTML = "";
     // Registrar que el juego ha sido completado
     const nombreUsuario =
@@ -314,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  // También en el botón de salir, añadir:
+  // Actualizar visibilidad de elementos comunes al cargar la página
   if (btnSalir) {
     btnSalir.addEventListener("click", () => {
       sectionInicio.style.display = "none";
@@ -406,13 +404,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // --- FUNCIONES DE VALIDACIÓN ---
   function validarNombre(nombre) {
-    // Solo letras y espacios, máximo 20 caracteres.
-    // No puede estar vacío o ser solo espacios.
+    // Solo letras y espacios y no puede estar vacío o ser solo espacios.
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{1,20}$/;
     return regex.test(nombre.trim()) && nombre.trim().length > 0;
   }
   function validarEdad(edad) {
-    // Número entre 6 y 12, máximo 2 dígitos.
+    // Número entre 6 y 12.
     const edadNum = parseInt(edad, 10);
     return (
       !isNaN(edadNum) &&
@@ -425,7 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- LÓGICA PARA NAVEGACIÓN ENTRE SECCIONES EN INICIO ---
   const mainContent = document.getElementById("inicio-main-content");
   const navItems = document.querySelectorAll(".nav-item");
-  // IDs de las secciones
   const seccionesIds = {
     inicio: "seccion-inicio-main",
     pensar: "seccion-pensar",
@@ -433,14 +429,6 @@ document.addEventListener("DOMContentLoaded", () => {
     crear: "seccion-crear",
     logros: "seccion-logros",
   };
-  // Manejar casos especiales para la navegación desde Logros
-  const logrosResultados = document.getElementById("logros-resultados");
-  if (logrosResultados && logrosResultados.style.display === "block") {
-    // Si estamos mostrando resultados de logros y navegamos a otra sección
-    if (key !== "logros" && window.ocultarResultadosLogros) {
-      window.ocultarResultadosLogros();
-    }
-  }
   function mostrarSoloSeccionInicio(key) {
     Object.values(seccionesIds).forEach((id) => {
       const div = document.getElementById(id);
@@ -461,7 +449,6 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (texto === "social") key = "social";
       else if (texto === "crear") key = "crear";
       else if (texto === "logros") key = "logros";
-      // Manejar casos especiales para la navegación desde Logros
       const logrosResultados = document.getElementById("logros-resultados");
       if (logrosResultados && logrosResultados.style.display === "block") {
         // Si estamos mostrando resultados de logros y navegamos a otra sección
@@ -469,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
           window.ocultarResultadosLogros();
         }
       }
-      // Gestionar juego Pensar activo
+      // Si hay un juego activo
       if (juegoActivo) {
         // Si el usuario navega a otra sección que no sea el juego actual
         if (juegoContainer.style.display !== "none" && key !== "pensar") {
@@ -504,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!juegoContainer.querySelector(".resultado-juego")) {
             limpiarJuego();
             iniciarNivel(1);
-            return; // No seguimos con mostrarSoloSeccionInicio
+            return;
           }
         }
       }
@@ -568,7 +555,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       }
-      // Mostrar la sección correspondiente
       mostrarSoloSeccionInicio(key);
     });
   });
@@ -576,10 +562,9 @@ document.addEventListener("DOMContentLoaded", () => {
   sectionNombre.style.display = "flex";
   sectionEdad.style.display = "none";
   sectionInicio.style.display = "none";
-  // Exponer la variable juegosCompletados para otros scripts
-  window.juegosCompletados = juegosCompletados;
-  // Puntajes globales para los juegos (accesibles desde logros.js)
+  window.juegosCompletados = juegosCompletados; // Exponer la variable juegosCompletados para otros scripts
   window.puntajesJuegos = {
+    // Puntajes globales para los juegos (accesibles desde logros.js)
     pensar: 0, // Puntaje del juego cognitivo (de 0 a 5)
     social: {
       empatia: 0,
