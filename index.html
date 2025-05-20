@@ -29,6 +29,10 @@
       content="Cristhian Steffano Díaz Piminchumo, Nehemías Isaías Lavado Vargas, Luis Bryan Díaz Vega, Jose Luis Garcia Roldan"
     />
     <meta name="copyright" content="© 2025 IntegraMente" />
+    <meta
+      name="google-site-verification"
+      content="dAO6og7WskD6KDz0cd-VRkcLxs5o3kmpDiMFxkT1mFk"
+    />
     <!-- Enlace canónico -->
     <link rel="canonical" href="https://integramente.pages.dev/" />
     <!-- Metadatos para Open Graph (para compartir en redes sociales) -->
@@ -41,7 +45,10 @@
     />
     <meta property="og:image" content="img/misc/background-main.webp" />
     <!-- Permite indexar la página y seguir los enlaces -->
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <!-- Sitemap -->
     <link
       rel="sitemap"
@@ -49,7 +56,7 @@
       title="Sitemap"
       href="/sitemap.xml"
     />
-    <!-- Favicon de la página -->
+    <!-- Favicon -->
     <link
       rel="icon"
       href="img/favicon/IntegraMente.ico"
@@ -70,6 +77,7 @@
   </head>
   <body>
     <header>
+      <!-- Logo y título de la aplicación web -->
       <div class="logo-container">
         <img
           src="img/favicon/IntegraMente.ico"
@@ -95,12 +103,12 @@
             </p>
           </div>
         </div>
+        <!-- Contenedor de entrada de texto y botón -->
         <div class="content-right">
           <input
             type="text"
             id="input-nombre"
             placeholder="Escribe tu nombre"
-            maxlength="20"
             autocomplete="off"
           />
           <button
@@ -133,6 +141,7 @@
             <span class="span-pink">emocionante</span>.
           </p>
         </div>
+        <!-- Contenedor de entrada de número y botones -->
         <div class="content-right">
           <input
             type="number"
@@ -140,7 +149,6 @@
             placeholder="Edad (6-12)"
             min="6"
             max="12"
-            maxlength="2"
           />
           <div class="button-group">
             <button
@@ -180,7 +188,9 @@
       <!-- Sección Inicio (oculto al inicio) -->
       <section id="section-inicio" style="display: none">
         <div class="inicio-header">
+          <!-- Contenedor de saludo al usuario -->
           <span id="saludo-usuario" class="saludo-usuario-text">Hola, </span>
+          <!-- Barra de navegación -->
           <nav aria-label="Navegación principal">
             <a href="#" class="nav-item" title="Ir a Inicio">
               <span class="nav-icon" aria-hidden="true">&#127968;</span>
@@ -203,6 +213,7 @@
               <span class="nav-text span-orange">Logros</span>
             </a>
           </nav>
+          <!-- Botón de salir -->
           <button
             type="button"
             id="btn-salir"
@@ -241,13 +252,14 @@
               <span class="logo-text">IntegraMente</span>
             </div>
           </div>
-          <!-- Sección Pensar -->
+          <!-- Sección del juego "Pensar" -->
           <div id="seccion-pensar" style="display: none">
             <div class="seccion-juego-card">
               <div class="seccion-juego-emoji" aria-hidden="true">
                 &#129504;
               </div>
               <div class="seccion-juego-titulo span-pink">Pensar</div>
+              <!-- Botón para iniciar el juego -->
               <button
                 type="button"
                 class="seccion-juego-boton"
@@ -259,8 +271,9 @@
               </button>
             </div>
           </div>
-          <!-- Juego Pensar (inicialmente oculto) -->
+          <!-- Juego "Pensar" (inicialmente oculto) -->
           <div id="juego-pensar" class="juego-container" style="display: none">
+            <!-- Contenedor del juego -->
             <div class="juego-header">
               <h2>Encuentra la imagen diferente</h2>
               <div class="juego-controles">
@@ -312,6 +325,7 @@
                 </button>
               </div>
             </div>
+            <!-- Contenedor de imágenes -->
             <div
               class="juego-grid"
               id="pensar-grid"
@@ -321,11 +335,12 @@
               <!-- Las imágenes se generarán dinámicamente con Js-->
             </div>
           </div>
-          <!-- Sección Social -->
+          <!-- Sección del juego "Social" -->
           <div id="seccion-social" style="display: none">
             <div class="seccion-juego-card">
               <div class="seccion-juego-emoji">&#129309;</div>
               <div class="seccion-juego-titulo span-yellow">Social</div>
+              <!-- Botón para iniciar el juego -->
               <button
                 type="button"
                 class="seccion-juego-boton"
@@ -337,8 +352,9 @@
               </button>
             </div>
           </div>
-          <!-- Juego Social (inicialmente oculto) -->
+          <!-- Juego "Social" (inicialmente oculto) -->
           <div id="juego-social" class="juego-container" style="display: none">
+            <!-- Contenedor del juego -->
             <div class="juego-header">
               <h2 id="pregunta-social">
                 Uno de mis compañeros(as) está discutiendo ¿Qué puedo hacer?
@@ -389,6 +405,7 @@
                 </button>
               </div>
             </div>
+            <!-- Contenedor de opciones sociales -->
             <div class="juego-reference-image">
               <img
                 id="reference-image"
@@ -403,11 +420,12 @@
               <!-- Las opciones se generarán dinámicamente con JS -->
             </div>
           </div>
-          <!-- Sección Crear -->
+          <!-- Sección del juego "Crear" -->
           <div id="seccion-crear" style="display: none">
             <div class="seccion-juego-card">
               <div class="seccion-juego-emoji">&#127912;</div>
               <div class="seccion-juego-titulo span-skyblue">Crear</div>
+              <!-- Botón para iniciar el juego -->
               <button
                 type="button"
                 class="seccion-juego-boton"
@@ -421,6 +439,7 @@
           </div>
           <!-- Juego Crear (inicialmente oculto) -->
           <div id="juego-crear" class="juego-container" style="display: none">
+            <!-- Contenedor del juego -->
             <div class="juego-header">
               <h2 id="crear-titulo">Selecciona un personaje</h2>
               <div class="juego-controles">
@@ -469,12 +488,12 @@
                 </button>
               </div>
             </div>
-            <!-- Área de selección (personajes, escenarios, objetos) -->
+            <!-- Área de selección (personajes, escenarios y objetos) -->
             <div
               id="crear-seleccion-container"
               class="crear-seleccion-container"
             >
-              <!-- Las opciones se generarán dinámicamente -->
+              <!-- Las opciones se generarán dinámicamente con JS -->
             </div>
             <!-- Área para el cuento generado (inicialmente oculto) -->
             <div
@@ -496,6 +515,7 @@
             <div class="seccion-juego-card">
               <div class="seccion-juego-emoji">&#127942;</div>
               <div class="seccion-juego-titulo span-orange">Logros</div>
+              <!-- Botón para ver la sección de logros -->
               <button
                 type="button"
                 class="seccion-juego-boton"
@@ -526,6 +546,7 @@
                 />
                 <h2 id="logros-nombre-usuario">NOMBRE DE USUARIO</h2>
               </div>
+              <!-- Contenedor de resultados -->
               <div class="logros-seccion">
                 <h3 class="logros-seccion-titulo">Cognitivo</h3>
                 <p id="logros-cognitivo-resultado">Puntaje más alto en "..."</p>
@@ -566,6 +587,7 @@
                   "Escritor", "diseñador de historias", "..." o "...".
                 </p>
               </div>
+              <!-- Botón para volver a la sección de inicio -->
               <button
                 type="button"
                 class="btn-volver"
@@ -581,6 +603,7 @@
         </div>
       </section>
     </main>
+    <!-- Sección de pie de página -->
     <footer id="main-footer">
       <section class="footer-banner">
         <div class="footer-logo">
@@ -605,10 +628,12 @@
         </div>
       </section>
       <section class="footer-links">
+        <!-- Enlaces legales del pie de página -->
         <div class="footer-legal">
           <a
             href="pdf/politicas-privacidad.pdf"
             target="_blank"
+            hreflang="es"
             rel="noopener noreferrer"
             class="footer-link"
             title="Abrir el documento de Políticas de Privacidad"
@@ -618,6 +643,7 @@
           <a
             href="pdf/terminos-condiciones.pdf"
             target="_blank"
+            hreflang="es"
             rel="noopener noreferrer"
             class="footer-link"
             title="Abrir el documento de Términos y Condiciones"
@@ -631,6 +657,7 @@
             &copy; <time datetime="2025">2025</time> IntegraMente. Todos los
             derechos reservados.
           </div>
+          <!-- Enlaces al repositorio de GitHub -->
           <a
             href="https://github.com/cristhian-sdp/IntegraMente"
             target="_blank"
@@ -642,16 +669,27 @@
               src="img/icons/github.webp"
               alt="Icono de GitHub"
               class="github-icon"
-              width="40"
-              height="40"
+              width="36"
+              height="36"
               loading="lazy"
               decoding="async"
               fetchpriority="low"
             />
           </a>
+          <!-- Enlace al validador de CSS -->
+          <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img
+                style="border: 0; width: 88px; height: 31px"
+                src="https://jigsaw.w3.org/css-validator/images/vcss"
+                alt="¡CSS Válido!"
+              />
+            </a>
+          </p>
         </div>
       </section>
     </footer>
+    <!-- Scripts de JavaScript -->
     <script src="js/script.min.js"></script>
     <script src="js/social-game.min.js"></script>
     <script src="js/create-game.min.js"></script>
