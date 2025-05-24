@@ -11,8 +11,12 @@
     <meta name="rating" content="safe for kids" />
     <!-- Título de la página -->
     <title>IntegraMente | Descubre tu Talento</title>
-    <!-- Enlaces a hojas de estilo CSS -->
+    <!-- Enlaces a CSS y JS -->
     <link rel="stylesheet" href="css/styles.min.css" />
+    <script src="js/script.min.js" defer></script>
+    <script src="js/social-game.min.js" defer></script>
+    <script src="js/create-game.min.js" defer></script>
+    <script src="js/logros.min.js" defer></script>
     <!-- Metadatos para SEO -->
     <meta name="title" content="IntegraMente | Descubre tu Talento" />
     <meta
@@ -43,25 +47,11 @@
       property="og:description"
       content="¡Aprender nunca fue tan divertido! Con IntegraMente, descubre tus talentos y habilidades mientras juegas y exploras nuevas formas de aprender. Ideal para niños curiosos que quieren descubrir lo mejor de sí mismos."
     />
-    <meta property="og:image" content="img/misc/background-main.webp" />
+    <meta property="og:image" content="img/misc/readme.webp" />
     <!-- Permite indexar la página y seguir los enlaces -->
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <!-- Sitemap -->
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="/sitemap.xml"
-    />
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="img/favicon/IntegraMente.ico"
-      type="image/webp"
-      sizes="any"
     />
     <!-- Fuente Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -74,16 +64,14 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap&subset=latin"
       rel="stylesheet"
     />
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/webp" sizes="any" />
   </head>
   <body>
     <header>
       <!-- Logo y título de la aplicación web -->
       <div class="logo-container">
-        <img
-          src="img/favicon/IntegraMente.ico"
-          class="logo-icon"
-          alt="Logo IntegraMente"
-        />
+        <img src="img/favicon.ico" class="logo-icon" alt="Logo IntegraMente" />
         <span class="logo-text">IntegraMente</span>
       </div>
     </header>
@@ -537,7 +525,7 @@
             <div class="logros-tarjeta">
               <div class="logros-encabezado">
                 <img
-                  src="img/favicon/IntegraMente.ico"
+                  src="img/favicon.ico"
                   alt="Logo IntegraMente"
                   class="logros-logo"
                   loading="lazy"
@@ -608,7 +596,7 @@
       <section class="footer-banner">
         <div class="footer-logo">
           <img
-            src="img/favicon/IntegraMente.ico"
+            src="img/favicon.ico"
             alt="Logo IntegraMente"
             title="Logo IntegraMente"
             class="footer-logo-img"
@@ -683,16 +671,14 @@
                 style="border: 0; width: 88px; height: 31px"
                 src="https://jigsaw.w3.org/css-validator/images/vcss"
                 alt="¡CSS Válido!"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
               />
             </a>
           </p>
         </div>
       </section>
     </footer>
-    <!-- Scripts de JavaScript -->
-    <script src="js/script.min.js"></script>
-    <script src="js/social-game.min.js"></script>
-    <script src="js/create-game.min.js"></script>
-    <script src="js/logros.min.js"></script>
   </body>
 </html>
