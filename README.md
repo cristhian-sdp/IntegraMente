@@ -2,6 +2,8 @@
 
 Bienvenido al repositorio de **IntegraMente**, una aplicación web educativa diseñada para ayudar a niños de primaria a descubrir sus talentos, habilidades e intereses a través de juegos interactivos.
 
+![Vista previa de ElPatita](img/misc/readme.webp)
+
 ## Descripción
 
 IntegraMente es una plataforma lúdica que permite a los niños explorar diferentes áreas de aprendizaje mediante tres juegos principales:
@@ -23,8 +25,7 @@ Al completar todos los juegos, la sección de **Logros** proporciona un análisi
   - `logros.js`: Funcionalidad del sistema de logros.
   - `social-game.js`: Lógica del juego Social.
   - `create-game.js`: Lógica del juego Crear.
-- `img/`: Directorio que contiene las imágenes utilizadas en el sitio web.
-  - `favicon/`: Iconos de la aplicación.
+- `img/`: Directorio que contiene las imágenes utilizadas en el sitio web y el favicon.
   - `icons/`: Iconos de interfaz.
   - `misc/`: Imágenes generales.
 - `video/`: Archivos de video utilizados en la aplicación.
