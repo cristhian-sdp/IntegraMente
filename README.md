@@ -16,7 +16,7 @@ Al completar todos los juegos, la sección de **Logros** proporciona un análisi
 
 ## Estructura del Proyecto
 
-- `index.html`: Página principal del sitio web.
+- `index.html`: Página principal de la aplicación web.
 - `404.html`: Página de error 404 para manejar rutas no encontradas.
 - `css/`: Directorio que contiene los archivos de estilos CSS.
   - `styles.css`: Estilos principales de la aplicación.
@@ -25,14 +25,17 @@ Al completar todos los juegos, la sección de **Logros** proporciona un análisi
   - `logros.js`: Funcionalidad del sistema de logros.
   - `social-game.js`: Lógica del juego Social.
   - `create-game.js`: Lógica del juego Crear.
-- `img/`: Directorio que contiene las imágenes utilizadas en el sitio web y el favicon.
+- `fonts/`: Directorio que contiene las fuentes utilizadas en la aplicación.
+- `img/`: Directorio que contiene las imágenes utilizadas en el sitio web.
+  - `favicon.ico`: Icono del sitio web.
   - `icons/`: Iconos de interfaz.
   - `misc/`: Imágenes generales.
-- `video/`: Archivos de video utilizados en la aplicación.
-- `pdf/`: Directorio que contiene documentos PDF como términos y condiciones y políticas de privacidad.
+- `video.webm`: Video decorativo de la aplicación.
+- `pdf/`: Directorio que contiene documentos legales.
 - `sitemap.xml`: Archivo XML que ayuda a los motores de búsqueda a indexar el sitio web.
 - `robots.txt`: Archivo que controla el acceso de los motores de búsqueda a ciertas partes del sitio web.
 - `security.txt`: Archivo que proporciona información de contacto y políticas de seguridad.
+- `pgp-key.txt`: Clave PGP para comunicación segura.
 - `README.md`: Archivo que proporciona información sobre el proyecto.
 - `LICENSE`: Archivo que contiene la licencia del proyecto.
 - `CONTRIBUTING.md`: Archivo que proporciona guías para contribuir al proyecto.
