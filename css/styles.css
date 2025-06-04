@@ -1,3 +1,25 @@
+/* Importación de fuentes */
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
 /* Variables CSS */
 :root {
   /* Paleta de colores */
@@ -46,51 +68,6 @@ main {
   flex-direction: column;
   width: 100%;
   flex-grow: 1;
-}
-/*ANIMACIONES CSS*/
-@keyframes slideDown {
-  /* Deslizar el contenido de arriba a abajo */
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slideInFromRight {
-  /* Deslizar el contenido de derecha a izquierda*/
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideInFromLeft {
-  /* Deslizar el contenido de izquierda a derecha */
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  /* Aparecimiento */
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 /* Estilos para el logo */
 header {
@@ -328,7 +305,7 @@ nav {
 }
 .nav-text {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 .btn-salir-inicio {
   animation: slideInFromRight 1s ease-in-out forwards;
@@ -404,7 +381,7 @@ nav {
 }
 .seccion-juego-titulo {
   font-size: clamp(1.5rem, 1.4rem + 0.4vw, 1.8rem);
-  font-weight: bold;
+  font-weight: 600;
   margin-top: -15px;
   text-align: center;
 }
@@ -413,7 +390,7 @@ nav {
   background: var(--celeste);
   color: var(--blanco-puro);
   font-size: clamp(1rem, 0.9rem + 0.3vw, 1.2rem);
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   border-radius: var(--rad-medium);
   padding: 12px 35px;
@@ -457,7 +434,7 @@ nav {
 }
 .contador-tiempo {
   font-size: clamp(1.4rem, 1.1rem + 0.8vw, 1.7rem);
-  font-weight: bold;
+  font-weight: 600;
   color: var(--blanco-puro);
   padding: 10px 16px;
   background-color: var(--rojo);
@@ -469,7 +446,7 @@ nav {
   justify-content: center;
 }
 .nivel-indicador {
-  font-weight: bold;
+  font-weight: 600;
 }
 .nivel-indicador span:first-child {
   font-size: 0.9rem;
@@ -546,7 +523,7 @@ nav {
 .puntaje {
   margin-left: 6px;
   font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.8rem);
-  font-weight: bold;
+  font-weight: 600;
   color: var(--rosa);
 }
 .aptitudes-container,
@@ -563,14 +540,14 @@ nav {
 .aptitud-titulo,
 .aptitud-creativa-titulo {
   color: var(--amarillo);
-  font-weight: bold;
+  font-weight: 600;
   font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
   margin-bottom: 10px;
 }
 .aptitud-valor,
 .aptitud-creativa-valor {
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--blanco-puro);
 }
 .btn-volver {
@@ -580,7 +557,7 @@ nav {
   padding: 12px 25px;
   border-radius: var(--rad-medium);
   font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.1rem);
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: transform 0.4s ease, background-color 0.4s ease;
 }
@@ -648,7 +625,7 @@ nav {
   text-align: center;
   color: var(--negro);
   font-size: clamp(0.9rem, 0.87rem + 0.2vw, 1rem);
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 15px;
 }
 .social-option-selected {
@@ -680,7 +657,7 @@ nav {
   text-align: center;
   color: var(--negro);
   font-size: clamp(0.9rem, 0.6rem + 0.6vw, 1.1rem);
-  font-weight: bold;
+  font-weight: 600;
 }
 .crear-opcion-selected {
   transform: translateY(10px);
@@ -755,7 +732,7 @@ nav {
 .logros-nombre-usuario {
   font-size: clamp(1.8rem, 1.2rem + 1.4vw, 2.6rem);
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
 }
 .logros-seccion {
   margin: 10px 0;
@@ -874,7 +851,7 @@ body.inicio-activo #main-footer {
   color: var(--negro);
   font-size: clamp(2.5rem, 2.1rem + 1.9vw, 3.4rem);
   margin-bottom: 30px;
-  font-weight: bold;
+  font-weight: 600;
 }
 .error-message {
   color: var(--negro);
@@ -889,8 +866,53 @@ body.inicio-activo #main-footer {
   padding: 12px 30px;
   border-radius: var(--rad-medium);
   font-size: clamp(1rem, 0.97rem + 0.15vw, 1.1rem);
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
+}
+/*ANIMACIONES CSS*/
+@keyframes slideDown {
+  /* Deslizar el contenido de arriba a abajo */
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  /* Deslizar el contenido de derecha a izquierda*/
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromLeft {
+  /* Deslizar el contenido de izquierda a derecha */
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  /* Aparecimiento */
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 /* Evitar animaciones en dispositivos que lo prefieren */
 @media (prefers-reduced-motion: reduce) {
@@ -1008,7 +1030,7 @@ body.inicio-activo #main-footer {
   }
 }
 /* Media query para Dispositivos Móviles*/
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .logo-icon {
     width: 45px;
     height: 45px;
