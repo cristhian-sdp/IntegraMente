@@ -925,9 +925,7 @@ body.inicio-activo #main-footer {
 }
 /* Media query para Tablets */
 @media screen and (max-width: 1024px) {
-  header {
-    padding: 20px 5%;
-  }
+  header,
   .content-left,
   .content-right {
     padding: 20px 4%;
@@ -937,7 +935,9 @@ body.inicio-activo #main-footer {
     padding: 0px 0%;
     margin: 0;
   }
-  .nav-text {
+  .nav-text,
+  .footer-link,
+  .footer-copyright {
     font-size: 0.9rem;
   }
   .saludo-usuario-text {
@@ -955,8 +955,9 @@ body.inicio-activo #main-footer {
   .juego-header {
     margin: 10px 0px;
   }
-  .juego-header h2 {
-    margin: 20px 0px;
+  .juego-header h2,
+  .juego-reference-image {
+    margin: 20px 0;
   }
   .juego-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -967,9 +968,6 @@ body.inicio-activo #main-footer {
     max-width: 80px;
     max-height: 80px;
   }
-  .juego-reference-image {
-    margin: 20px 0;
-  }
   .social-options-container {
     gap: 10px;
   }
@@ -977,12 +975,10 @@ body.inicio-activo #main-footer {
     max-width: 220px;
   }
   .social-option,
-  .crear-opcion {
-    padding: 8px;
-  }
+  .crear-opcion,
   .aptitud-item,
   .aptitud-creativa-item {
-    padding: 10px;
+    padding: 9px;
   }
   .aptitud-valor,
   .aptitud-creativa-valor {
@@ -995,9 +991,7 @@ body.inicio-activo #main-footer {
   .crear-opcion {
     width: 150px;
   }
-  .crear-cuento-container {
-    margin-top: 20px;
-  }
+  .crear-cuento-container,
   .crear-elementos-seleccionados {
     margin-top: 20px;
   }
@@ -1024,10 +1018,6 @@ body.inicio-activo #main-footer {
   .footer-links {
     padding: 15px 2%;
   }
-  .footer-link,
-  .footer-copyright {
-    font-size: 0.9rem;
-  }
 }
 /* Media query para Dispositivos Móviles*/
 @media only screen and (max-width: 768px) {
@@ -1046,7 +1036,10 @@ body.inicio-activo #main-footer {
   }
   #btn-next-nombre,
   #btn-back-edad,
-  #btn-next-edad {
+  #btn-next-edad,
+  .contador-tiempo,
+  .btn-juego,
+  .logros-logo {
     width: 55px;
     height: 55px;
   }
@@ -1112,15 +1105,12 @@ body.inicio-activo #main-footer {
   .nav-text {
     font-size: 0.7rem;
   }
-  .btn-salir-inicio {
-    width: 50px;
-    height: 50px;
-  }
   .inicio-main-content {
     border-radius: var(--rad-medium);
     height: 60dvh;
   }
-  .video-overlay-text {
+  .video-overlay-text,
+  .seccion-juego-boton {
     padding: 10px 30px;
   }
   .seccion-juego-card {
@@ -1128,19 +1118,12 @@ body.inicio-activo #main-footer {
     min-width: 220px;
     min-height: 220px;
   }
-  .seccion-juego-boton {
-    padding: 10px 30px;
-  }
   .juego-container {
     padding: 20px 6%;
   }
-  .juego-controles {
+  .juego-controles,
+  .crear-elementos-seleccionados {
     gap: 15px;
-  }
-  .contador-tiempo,
-  .btn-juego {
-    width: 55px;
-    height: 55px;
   }
   .juego-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1177,9 +1160,6 @@ body.inicio-activo #main-footer {
   .crear-historia-generada p {
     font-size: 0.9rem;
   }
-  .crear-elementos-seleccionados {
-    gap: 15px;
-  }
   .crear-elementos-seleccionados img {
     width: 80px;
   }
@@ -1188,10 +1168,6 @@ body.inicio-activo #main-footer {
   }
   .logros-encabezado {
     margin: 15px 0;
-  }
-  .logros-logo {
-    width: 55px;
-    height: 55px;
   }
   .resultado-juego,
   .social-resultado,
@@ -1221,9 +1197,7 @@ body.inicio-activo #main-footer {
     padding: 30px 25px;
     border-radius: var(--rad-small);
   }
-  .error-title {
-    margin-bottom: 20px;
-  }
+  .error-title,
   .error-message {
     margin-bottom: 20px;
   }
@@ -1262,8 +1236,10 @@ body.inicio-activo #main-footer {
     max-width: 95%;
     padding: 10px 0px;
   }
-  .crear-historia-generada p {
-    font-size: 0.75rem;
+  .crear-historia-generada p,
+  .footer-link,
+  .footer-copyright {
+    font-size: 0.73rem;
   }
   .aptitudes-container,
   .aptitudes-creativas-container {
@@ -1289,10 +1265,6 @@ body.inicio-activo #main-footer {
   }
   .footer-bottom {
     margin-top: 10px;
-  }
-  .footer-link,
-  .footer-copyright {
-    font-size: 0.7rem;
   }
   .github-icon {
     width: 30px;
