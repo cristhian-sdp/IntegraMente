@@ -110,13 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Plantillas para generar historias
   const plantillas = [
     'En las profundidades del misterioso {escenario}, donde las luces centelleantes iluminaban cada rincón, {personaje} descubrió un extraordinario {objeto} que brillaba con colores nunca antes vistos. "¡Increíble!", exclamó asombrado. Al tomarlo entre sus manos, sintió una extraña energía recorriendo todo su cuerpo, otorgándole poderes que jamás imaginó poseer. Los ancianos del lugar le contaron que solo los valientes de corazón puro podían dominar su magia. Tras enfrentarse a temibles guardianes y resolver enigmas ancestrales, {personaje} aprendió a controlar los asombrosos poderes del {objeto}, convirtiéndose en la mayor leyenda que el {escenario} había conocido jamás.',
-
     'El sol se ponía sobre el majestuoso {escenario} cuando {personaje}, con ojos llenos de curiosidad, encontró un reluciente {objeto} oculto entre antiguas ruinas. "¿Qué secretos guardas?", susurró mientras lo examinaba. De pronto, el {objeto} comenzó a vibrar y a emitir destellos multicolores que danzaban en el aire. Una voz ancestral resonó en su mente: "Has sido elegido para una gran misión". Criaturas sombrías emergieron de las sombras, buscando arrebatarle su hallazgo. Con valentía y astucia nunca antes demostradas, {personaje} se enfrentó a cada desafío. Tras una épica batalla contra el Rey de las Sombras, consiguió restaurar la paz en el {escenario}, ganándose el respeto de todos sus habitantes.',
-
     'La lluvia caía suavemente sobre el encantador {escenario} cuando {personaje} se refugió bajo un árbol milenario. Un destello dorado llamó su atención: allí, parcialmente enterrado, estaba un fascinante {objeto} con inscripciones en una lengua olvidada. Al tocarlo, visiones de civilizaciones antiguas inundaron su mente. "Este es mi destino", pensó con determinación. El sabio guardián del {escenario} le advirtió: "Grandes poderes conllevan grandes responsabilidades". Enfrentando peligrosos acertijos y cruzando puentes imposibles, {personaje} demostró ser digno del legendario {objeto}. Sus hazañas serían narradas durante generaciones, contando cómo salvó al {escenario} de la terrible maldición que lo amenazaba desde tiempos inmemoriales.',
-
     'Nadie en el sorprendente {escenario} creía en las leyendas sobre el mítico {objeto}, excepto {personaje}, quien soñaba cada noche con encontrarlo. "Todos me dicen que es imposible, pero yo sé que existe", decía con convicción. Tras meses de búsqueda incansable, escalando montañas imposibles y atravesando ríos turbulentos, su perseverancia fue recompensada. El {objeto}, más magnificente de lo que jamás imaginó, respondió a su llamado. Cuando las fuerzas oscuras intentaron sumergir el {escenario} en tinieblas eternas, {personaje} descubrió que el verdadero poder no residía en el {objeto} mismo, sino en la nobleza de su corazón y la fuerza de su voluntad. Con un último acto de valentía, transformó el {escenario} en un lugar donde la magia y la bondad reinarían por siempre.',
-
     'En el corazón del fantástico {escenario}, donde realidad y magia se entrelazan, {personaje} se aventuró más allá de lo permitido. "Solo busco respuestas", se justificaba mientras exploraba cavernas prohibidas. Entre cristales que cantaban melodías hipnóticas, encontró el legendario {objeto}, custodiado por guardianes de otro tiempo. "Has despertado lo que debía permanecer dormido", le advirtió una criatura alada. Terremotos y tormentas mágicas comenzaron a asolar el {escenario}. Arrepentido pero decidido, {personaje} emprendió un viaje de redención, enfrentando sus miedos más profundos. Tras superar pruebas que parecían imposibles, aprendió a usar el {objeto} con sabiduría, trayendo una era de prosperidad nunca antes vista en el {escenario}, donde su nombre se convirtió en sinónimo de heroísmo y esperanza.',
   ];
   // Iniciar el juego al hacer clic en JUGAR
@@ -139,8 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnResetCrear) {
     btnResetCrear.addEventListener("click", () => {
       // Verificar si hay resultados visibles
+      const resultadoElement = juegoContainer.querySelector(".crear-resultado");
       const hayResultadosVisibles =
-        juegoContainer.querySelector(".crear-resultado");
+        resultadoElement && resultadoElement.style.display === "block";
       if (hayResultadosVisibles) {
         // No permitir reset si hay resultados
         return;
@@ -160,11 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
         nivelActual++;
         iniciarNivel(nivelActual);
       } else if (nivelActual === 3) {
-        // Mostrar el cuento generado (nivel 4)
+        // Mostrar el cuento generado
         nivelActual = 4;
         mostrarCuento();
       } else {
-        // Juego completado, mostrar resultados
         mostrarResultadoFinal();
       }
     });
@@ -299,9 +295,15 @@ document.addEventListener("DOMContentLoaded", () => {
       imaginacion: puntajes.imaginacion,
       percepcionEstetica: puntajes.percepcionEstetica,
     };
-    // Crear elemento para mostrar resultado
-    const resultadoElement = document.createElement("div");
-    resultadoElement.classList.add("crear-resultado");
+    // Obtener el elemento de resultado existente
+    const resultadoElement = juegoContainer.querySelector(".crear-resultado");
+    // Actualizar valores de puntaje
+    const valoresAptitud = resultadoElement.querySelectorAll(
+      ".aptitud-creativa-valor"
+    );
+    valoresAptitud[0].textContent = `${puntajes.originalidad} pts`;
+    valoresAptitud[1].textContent = `${puntajes.percepcionEstetica} pts`;
+    valoresAptitud[2].textContent = `${puntajes.imaginacion} pts`;
     // Deshabilitar botones durante resultados
     if (btnResetCrear) {
       btnResetCrear.disabled = true;
@@ -309,27 +311,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnNextCrear) {
       btnNextCrear.disabled = true;
     }
-    resultadoElement.innerHTML = `
-      <h2>¡Felicidades!</h2>
-      <p>Has completado el juego</p>
-      <div class="aptitudes-creativas-container">
-        <div class="aptitud-creativa-item">
-          <div class="aptitud-creativa-titulo">Originalidad</div>
-          <div class="aptitud-creativa-valor">${puntajes.originalidad} pts</div>
-        </div>
-        <div class="aptitud-creativa-item">
-          <div class="aptitud-creativa-titulo">Percepción Estética</div>
-          <div class="aptitud-creativa-valor">${puntajes.percepcionEstetica} pts</div>
-        </div>
-        <div class="aptitud-creativa-item">
-          <div class="aptitud-creativa-titulo">Imaginación</div>
-          <div class="aptitud-creativa-valor">${puntajes.imaginacion} pts</div>
-        </div>
-      </div>
-      <button class="btn-volver">Volver al inicio</button>
-    `;
-    juegoContainer.appendChild(resultadoElement);
-    // Botón para volver
+    // Mostrar el resultado
+    resultadoElement.style.display = "block";
+    // Configurar el evento del botón volver
     const btnVolver = resultadoElement.querySelector(".btn-volver");
     btnVolver.addEventListener("click", () => {
       // Limpiar y ocultar el juego
@@ -343,13 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btnCrear.disabled = true;
         btnCrear.classList.add("juego-finalizado");
       }
-      // Rehabilitar los botones
-      if (btnResetCrear) {
-        btnResetCrear.disabled = false;
-      }
-      if (btnNextCrear) {
-        btnNextCrear.disabled = false;
-      }
       // Mostrar la tarjeta de inicio y volver a la sección inicio
       seccionJuegoCard.style.display = "flex";
       window.mostrarSoloSeccionInicio("inicio");
@@ -357,10 +334,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Función para limpiar el juego
   function limpiarJuego() {
-    // Eliminar el resultado si existe
+    // Ocultar el resultado si está visible
     const resultadoElement = juegoContainer.querySelector(".crear-resultado");
     if (resultadoElement) {
-      resultadoElement.remove();
+      resultadoElement.style.display = "none";
     }
     // Resetear variables
     nivelActual = 1;

@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // Función para iniciar un nivel
+  // Función para iniciar el nivel de Pensar
   function iniciarNivel(nivel) {
     nivelPensar.textContent = nivel;
     btnNextPensar.disabled = true;
@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   }
+  // Detener el temporizador
   function detenerTemporizador() {
     if (intervalId) {
       clearInterval(intervalId);
@@ -227,9 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Sincronizar con la variable global
     window.juegosCompletados = juegosCompletados;
-    // Crear elemento para mostrar resultado
-    const resultadoElement = document.createElement("div");
-    resultadoElement.classList.add("resultado-juego");
+    // Obtener el elemento de resultado existente
+    const resultadoElement = juegoContainer.querySelector(".resultado-juego");
+    // Deshabilitar botones durante resultados
     if (btnResetPensar) {
       btnResetPensar.disabled = true;
     }
@@ -240,15 +241,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const puntaje = aciertos;
     // Guardar el puntaje para Logros
     window.puntajesJuegos.pensar = aciertos;
-    resultadoElement.innerHTML = `
-      <h2>¡Felicidades!</h2>
-      <p>Has completado el juego</p>
-      <div class="puntaje-container">
-        <p>Tu puntaje cognitivo es: <span class="puntaje">${puntaje}/5</span></p>
-      </div>
-      <button class="btn-volver">Volver al inicio</button>
-    `;
-    juegoContainer.appendChild(resultadoElement);
+    // Actualizar el puntaje en el elemento HTML
+    const puntajeElement = document.getElementById("puntaje-pensar");
+    if (puntajeElement) {
+      puntajeElement.textContent = `${puntaje}/5`;
+    }
+    // Mostrar el resultado
+    resultadoElement.style.display = "block";
     // Botón para volver
     const btnVolver = resultadoElement.querySelector(".btn-volver");
     btnVolver.addEventListener("click", () => {
@@ -263,16 +262,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnPensar.disabled = true;
         btnPensar.classList.add("juego-finalizado");
       }
-      // Rehabilitar el botón de reset
-      if (btnResetPensar) {
-        btnResetPensar.disabled = false;
-      }
-      if (btnNextPensar) {
-        btnNextPensar.disabled = false;
-      }
       // Mostrar la tarjeta de inicio y volver a la sección inicio
       seccionJuegoCard.style.display = "flex";
-      mostrarSoloSeccionInicio("inicio");
     });
   }
   // Función para limpiar el juego
@@ -281,10 +272,10 @@ document.addEventListener("DOMContentLoaded", () => {
     detenerTemporizador();
     // Eliminar todos los elementos del contenedor
     pensarGrid.innerHTML = "";
-    // Eliminar el resultado si existe
+    // Ocultar el resultado si está visible
     const resultadoElement = juegoContainer.querySelector(".resultado-juego");
     if (resultadoElement) {
-      resultadoElement.remove();
+      resultadoElement.style.display = "none";
     }
     // Resetear variables
     nivelActual = 1;
@@ -368,28 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Mostrar saludo personalizado
       if (nombreUsuario) {
         saludoUsuarioText.textContent = `Hola, ${nombreUsuario}!`;
-      }
-      // Verificar si hay juegos completados para este usuario
-      const claveJuegosCompletados = `juegosCompletados_${nombreUsuario}`;
-      juegosCompletados =
-        JSON.parse(localStorage.getItem(claveJuegosCompletados)) || [];
-      // Verificar si el juego Pensar está completado y actualizar botón
-      if (juegosCompletados.includes("pensar")) {
-        const btnPensar = document.getElementById("iniciar-pensar");
-        if (btnPensar) {
-          btnPensar.textContent = "FINALIZADO";
-          btnPensar.disabled = true;
-          btnPensar.classList.add("juego-finalizado");
-        }
-      }
-      // Verificar si el juego Crear está completado y actualizar botón
-      if (juegosCompletados.includes("crear")) {
-        const btnCrear = document.getElementById("iniciar-crear");
-        if (btnCrear) {
-          btnCrear.textContent = "FINALIZADO";
-          btnCrear.disabled = true;
-          btnCrear.classList.add("juego-finalizado");
-        }
       }
       // Al entrar a inicio, mostrar solo la sección de bienvenida
       mostrarSoloSeccionInicio("inicio");
@@ -475,15 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
               btnPensar.classList.add("juego-finalizado");
             }
           }
-          // Verificar si el juego Social está completado y actualizar botón
-          if (juegosCompletados.includes("social")) {
-            const btnSocial = document.getElementById("iniciar-social");
-            if (btnSocial) {
-              btnSocial.textContent = "FINALIZADO";
-              btnSocial.disabled = true;
-              btnSocial.classList.add("juego-finalizado");
-            }
-          }
         }
         // Si navega al mismo juego, resetear (si no hay resultados visibles)
         else if (juegoContainer.style.display !== "none" && key === "pensar") {
@@ -500,8 +460,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Si navega a otra sección que no sea Social
         if (juegoSocialContainer.style.display !== "none" && key !== "social") {
           // Verificar si estamos mostrando resultados
-          const hayResultadosVisibles =
+          const resultadoElement =
             juegoSocialContainer.querySelector(".social-resultado");
+          const hayResultadosVisibles =
+            resultadoElement && resultadoElement.style.display === "block";
           // Si hay resultados visibles, marcar el juego como completado
           if (hayResultadosVisibles && !juegosCompletados.includes("social")) {
             juegosCompletados.push("social");
@@ -530,8 +492,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Si navega a otra sección que no sea Crear
         if (juegoCrearContainer.style.display !== "none" && key !== "crear") {
           // Verificar si estamos mostrando resultados
-          const hayResultadosVisibles =
+          const resultadoElement =
             juegoCrearContainer.querySelector(".crear-resultado");
+          const hayResultadosVisibles =
+            resultadoElement && resultadoElement.style.display === "block";
           // Si hay resultados visibles, marcar el juego como completado
           if (hayResultadosVisibles && !juegosCompletados.includes("crear")) {
             juegosCompletados.push("crear");

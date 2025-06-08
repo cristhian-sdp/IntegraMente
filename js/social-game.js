@@ -239,9 +239,13 @@ document.addEventListener("DOMContentLoaded", () => {
       pensamiento: puntajes.pensamiento,
       resolucion: puntajes.resolucion,
     };
-    // Crear elemento para mostrar resultado
-    const resultadoElement = document.createElement("div");
-    resultadoElement.classList.add("social-resultado");
+    // Obtener el elemento de resultado existente
+    const resultadoElement = juegoContainer.querySelector(".social-resultado");
+    // Actualizar los valores de puntaje en el HTML
+    const valoresAptitud = resultadoElement.querySelectorAll(".aptitud-valor");
+    valoresAptitud[0].textContent = `${puntajes.empatia} pts`;
+    valoresAptitud[1].textContent = `${puntajes.pensamiento} pts`;
+    valoresAptitud[2].textContent = `${puntajes.resolucion} pts`;
     // Marcar como completado cuando se muestran resultados
     if (
       window.juegosCompletados &&
@@ -256,27 +260,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnNextSocial) {
       btnNextSocial.disabled = true;
     }
-    resultadoElement.innerHTML = `
-      <h2>¡Felicidades!</h2>
-      <p>Has completado el juego</p>
-      <div class="aptitudes-container">
-        <div class="aptitud-item">
-          <div class="aptitud-titulo">Empatía</div>
-          <div class="aptitud-valor">${puntajes.empatia} pts</div>
-        </div>
-        <div class="aptitud-item">
-          <div class="aptitud-titulo">Pensamiento Crítico</div>
-          <div class="aptitud-valor">${puntajes.pensamiento} pts</div>
-        </div>
-        <div class="aptitud-item">
-          <div class="aptitud-titulo">Resolución de Conflictos</div>
-          <div class="aptitud-valor">${puntajes.resolucion} pts</div>
-        </div>
-      </div>
-      <button class="btn-volver">Volver al inicio</button>
-    `;
-    juegoContainer.appendChild(resultadoElement);
-    // Botón para volver
+    // Mostrar el resultado
+    resultadoElement.style.display = "block";
+    // Configurar el evento del botón volver
     const btnVolver = resultadoElement.querySelector(".btn-volver");
     btnVolver.addEventListener("click", () => {
       // Limpiar y ocultar el juego
@@ -296,13 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSocial.textContent = "FINALIZADO";
         btnSocial.disabled = true;
         btnSocial.classList.add("juego-finalizado");
-      }
-      // Rehabilitar los botones
-      if (btnResetSocial) {
-        btnResetSocial.disabled = false;
-      }
-      if (btnNextSocial) {
-        btnNextSocial.disabled = false;
       }
       // Mostrar la tarjeta de inicio y volver a la sección inicio
       preguntaSocial.style.display = "block";
@@ -346,10 +325,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Función para limpiar el juego
   function limpiarJuego() {
-    // Eliminar el resultado si existe
+    // Ocultar el resultado si está visible
     const resultadoElement = juegoContainer.querySelector(".social-resultado");
     if (resultadoElement) {
-      resultadoElement.remove();
+      resultadoElement.style.display = "none";
     }
     // Resetear variables
     nivelActual = 1;
