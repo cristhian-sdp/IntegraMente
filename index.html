@@ -16,7 +16,7 @@
     <script src="js/script.min.js" defer></script>
     <script src="js/social-game.min.js" defer></script>
     <script src="js/create-game.min.js" defer></script>
-    <script src="js/logros.min.js" defer></script>
+    <script src="js/logros.min.js " defer></script>
     <!-- Metadatos para SEO -->
     <meta name="title" content="IntegraMente | Descubre tu Talento" />
     <meta
@@ -311,6 +311,20 @@
             >
               <!-- Las imágenes se generarán dinámicamente con Js-->
             </div>
+            <!-- Resultado del juego (inicialmente oculto) -->
+            <div class="resultado-juego" style="display: none">
+              <h2>¡Felicidades!</h2>
+              <p>Has completado el juego</p>
+              <div class="puntaje-container">
+                <p>
+                  Tu puntaje cognitivo es:
+                  <span class="puntaje" id="puntaje-pensar">0/5</span>
+                </p>
+              </div>
+              <button class="btn-volver" id="btn-volver-pensar">
+                Volver al inicio
+              </button>
+            </div>
           </div>
           <!-- Sección del juego "Social" -->
           <div id="seccion-social" style="display: none">
@@ -395,6 +409,26 @@
             </div>
             <div class="social-options-container" id="social-options">
               <!-- Las opciones se generarán dinámicamente con JS -->
+            </div>
+            <!-- Resultado del juego Social (inicialmente oculto) -->
+            <div class="social-resultado" style="display: none">
+              <h2>¡Felicidades!</h2>
+              <p>Has completado el juego</p>
+              <div class="aptitudes-container">
+                <div class="aptitud-item">
+                  <div class="aptitud-titulo">Empatía</div>
+                  <div class="aptitud-valor">0 pts</div>
+                </div>
+                <div class="aptitud-item">
+                  <div class="aptitud-titulo">Pensamiento Crítico</div>
+                  <div class="aptitud-valor">0 pts</div>
+                </div>
+                <div class="aptitud-item">
+                  <div class="aptitud-titulo">Resolución de Conflictos</div>
+                  <div class="aptitud-valor">0 pts</div>
+                </div>
+              </div>
+              <button class="btn-volver">Volver al inicio</button>
             </div>
           </div>
           <!-- Sección del juego "Crear" -->
@@ -485,6 +519,26 @@
               <div class="crear-historia-generada">
                 <p id="crear-texto-historia"></p>
               </div>
+            </div>
+            <!-- Resultado del juego Crear (inicialmente oculto) -->
+            <div class="crear-resultado" style="display: none">
+              <h2>¡Felicidades!</h2>
+              <p>Has completado el juego</p>
+              <div class="aptitudes-creativas-container">
+                <div class="aptitud-creativa-item">
+                  <div class="aptitud-creativa-titulo">Originalidad</div>
+                  <div class="aptitud-creativa-valor">0 pts</div>
+                </div>
+                <div class="aptitud-creativa-item">
+                  <div class="aptitud-creativa-titulo">Percepción Estética</div>
+                  <div class="aptitud-creativa-valor">0 pts</div>
+                </div>
+                <div class="aptitud-creativa-item">
+                  <div class="aptitud-creativa-titulo">Imaginación</div>
+                  <div class="aptitud-creativa-valor">0 pts</div>
+                </div>
+              </div>
+              <button class="btn-volver">Volver al inicio</button>
             </div>
           </div>
           <!-- Sección Logros -->
